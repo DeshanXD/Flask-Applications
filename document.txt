@@ -44,6 +44,6 @@ we are using jinja2 template engine to generate dynamic content for user, oh yea
 
 To run the application you can use extension 'flask-script' which gives more compabilty in reference to manage.py. You can use runserver commad with args (defining a special port 0.0.0.0 which is pretty cool)
 
-You need to avoid circular imports problem which is common in python, You have to import routes at the bottom, reference to blueprints constructor
+You need to avoid circular imports problem which is common in python, You have to import routes at the bottomm reference to blueprints constructor
 
  
