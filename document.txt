@@ -1,0 +1,49 @@
+Flask application has three parts:
+
+Most important part is routes:
+Routes are basically most fucking thing that you can find on every platform
+
+Website is basically answer the requests that's what routes do pretty much well
+
+Flask is very helpful with decorators these are very common decorators,
+
+1. route 
+2. Before request
+3. before_first_request
+4. after_request
+5. teardown_request - Working even if request handler throws an exception pretty cool thing
+6. errorhandler
+
+
+Another big thing about flask is "context globals"
+
+current_app - refers to instance of the current app
+g - global storage for request, it's like request dependant
+request - is object that what user want
+session - this is a session storage, pretty much help full fo r login handling
+
+Flask has good documentation and good source code. It has only about 2100 lines when comapring to django, its 54000 lines OMG
+
+basic project structure has launch script and configurations file and our app package :) This a basic file structure if you mind
+
+application has structure of "templates", "static" folder and bluprints file and __init__.py and also database models
+
+__init__ contains the constructor for application
+
+In reference to basicfile project, this application just return an obk=ject from the constructor. This is helpful when you have to have configurations extra, useful way is this it create a 'app'. first thing that need to care about is 'app' should be created as a global variable if not we can't use that in routes, because there is no app :v
+
+Instead of making global 'app' we can make global #Blueprint 
+
+When talking about blueprints they sounds official, but they aren't. Basically blueprints are where you park your routes. One more thing you can do with it is seperate templates and static files are for each Blueprints. well it's sounds official but why bother? You can have seperate routes it is amazing in't it ;)
+
+whole point of using Bluprints in action is when you have seperate configurations like testing and production, It's harder to do configuration at the runtime (application running). because in single file u need to define 'app' variable as global. which is horrible
+
+We can bring all the routes from the Blueprint with registering the Blueprint in the factory function (constructor __init__) whatever :v
+
+we are using jinja2 template engine to generate dynamic content for user, oh yeah welocome users!
+
+To run the application you can use extension 'flask-script' which gives more compabilty in reference to manage.py. You can use runserver commad with args (defining a special port 0.0.0.0 which is pretty cool)
+
+You need to avoid circular imports problem which is common in python, You have to import routes at the bottom, reference to blueprints constructor
+
+ 
